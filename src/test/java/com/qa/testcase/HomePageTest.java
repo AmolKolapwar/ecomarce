@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.commons.lang3.builder.EqualsBuilder;
@@ -189,20 +191,36 @@ public class HomePageTest extends Testbase {
 	@Test
 	public void testing() throws InterruptedException{
 		
-		//List<String> actualResult = new ArrayList<String>();
-		List<WebElement>ElementsList =driver.findElements(By.tagName("body"));
+		List<WebElement>ElementsList =driver.findElements(By.xpath("//*"));
+		List<String> actualResult = new ArrayList<String>();
+		
+		for(int i=0;i<ElementsList.size();i++){
+	        System.out.println(ElementsList.get(i).getText());
+	        actualResult.add(ElementsList.get(i).getText());
+	    }
 				// List<WebElement>driver.findElements(By.xpath("//*"));
 		//driver.getPageSource();
-		System.out.println(Integer.toString(ElementsList.size()));
-	
+		//System.out.println(Integer.toString(ElementsList.size()));
+		/*String []linkText =new String[ElementsList.size()];
+		
+		System.out.println(Arrays.toString(linkText));
 		for(WebElement element : ElementsList) {
 		   
 		 System.out.println(  element.getText());
 				  
 		 
 		 
-		}             
-		  List<String> expectedResult = new ArrayList<String>();
+		}       */    
+		
+	
+	     
+		 List<String> expectedResult = new ArrayList<String>();
+		// List<String> expectedresultt = new ArrayList<String>();
+		  
+		 
+		 expectedResult.toString();
+		 //expectedResult .replace(",", "");
+		  
 		  expectedResult.add("Shop");                  
 		  expectedResult.add("My Account");
 		  expectedResult.add("Test Cases");
@@ -218,35 +236,66 @@ public class HomePageTest extends Testbase {
 		  
 		  expectedResult.add("Email address *");
 		  expectedResult.add("Password *");
-		  expectedResult.add(" SUBSCRIBE HERE");
+		  expectedResult.add("SUBSCRIBE HERE");
 		  expectedResult.add("© Automation Practice Site 2018");
 		  
-		  assertThat(expectedResult).isEqualTo(ElementsList);
-		  System.out.println(expectedResult);
-	
-		  //assertThat(expectedResult).containsAll(element);
-//Assert.assertEquals(expectedResult, ElementsList);
+		/*  for (int i =0;i<expectedResult.size();i++){
+				 expectedresultt.add(expectedResult.get(i));
+				 System.out.println("--------------------:"+expectedresultt);
+				 
+		  Assert.assertEquals(actualResult,expectedresultt);
 		  
-if( ElementsList.size() == expectedResult.size() && (ElementsList.containsAll(expectedResult))){
-	
-	System.out.println("List Match ");
-	
-}else{
-	
-	System.out.println("List Not Match");
-}
+		 
 		  
 		  
+		 }	*/
+		  
+		  System.out.println(expectedResult.size());
+		  System.out.println(actualResult.size());
+		  expectedResult.toString().replaceAll(",", "");
+		 if (actualResult.size()== expectedResult.size()){
+			 
+			System.out.println("Matched");
+		 }else{
+			 
+			 System.out.println("Failed");
+		 }
+		  
+		
+		  
+		  if (actualResult.size()==expectedResult.size()){
+			  
+			  for (int i =0;i<expectedResult.size();i++){
+				  
+				  if (expectedResult.get(i).equals(actualResult.get(i))){
+					  
+					  System.out.println("Matched");
+					  
+				  }else{
+					  
+					  System.out.println("Not Matched");
+				  }
+			  }
+		  }
+		
+	}
+	
+	
+ // System.out.println(actualResult.containsAll(expectedResult));
+		//  assertThat(actualResult).isEqualTo(expectedResult);
+		//  System.out.println(expectedResult);
+	
+		// assertThat(actualResult).containsAll(expectedresult);
+		  
+		
+		//  
+/*a*/
 
-/* for(int i=0;i<expectedResult.size();i++) {
-			    if(ElementsList.get(i)(expectedResult.get(i))) {
-			        System.out.println("Search function verified");
-			    }else {
-			        System.out.println("Search function verification failed"+ElementsList.get(i));
-			    }
-			}*/
-//	}
-		// assertThat(actualResult).containsAll(expectedResult);
+		  
+		  
+	
+ 
+		
 
 	/*@Test
 	public void Add_To_Basket_Coupan() throws InterruptedException{
@@ -355,7 +404,7 @@ if( ElementsList.size() == expectedResult.size() && (ElementsList.containsAll(ex
 	}
 	*/
 
-	@Test(retryAnalyzer =com.qa.utill.Myretry.class,groups= {"sanity"})
+	/*@Test(retryAnalyzer =com.qa.utill.Myretry.class,groups= {"sanity"})
 	public void check_Out_PaymentGatway() throws InterruptedException{
 
 		homepaget.clickOnHomePage();
@@ -391,7 +440,7 @@ if( ElementsList.size() == expectedResult.size() && (ElementsList.containsAll(ex
     	   
      	  
        }
-	
+	*/
 	
 	@AfterMethod
 	public void quit() {

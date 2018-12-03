@@ -82,7 +82,7 @@ public class Shop_Test  extends Testbase{
 		
 	}*/
 	
-	@Test
+/*	@Test
 	public void verify_Cart_Item() throws InterruptedException{
 		
 		//shoptest.add_To_Basket_View_Functionality();
@@ -95,7 +95,7 @@ public class Shop_Test  extends Testbase{
 		shoptest = checkout.elementDispyeld();
 		
 	}
-	
+	*/
 	
 	
 
