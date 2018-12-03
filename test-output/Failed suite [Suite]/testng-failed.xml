@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Failed suite [Suite]]">
+  <test thread-count="5" name="Test(failed)(failed)" parallel="classes">
+    <groups>
+      <run>
+        <include name="sanity"/>
+        <exclude name="smoke"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.qa.testcase.HomePageTest">
+        <methods>
+          <include name="check_Out_PaymentGatway"/>
+          <include name="verify_TotalPriceGrater_ToSubtotal"/>
+        </methods>
+      </class> <!-- com.qa.testcase.HomePageTest -->
+    </classes>
+  </test> <!-- Test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Suite]] -->

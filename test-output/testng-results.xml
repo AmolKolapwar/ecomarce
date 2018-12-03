@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="47" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="47" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+      <class name="com.qa.testcase.Testng_Annotatios">
+        <test-method status="PASS" signature="beforesuite()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="beforesuite" is-config="true" duration-ms="22" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforesuite -->
+        <test-method status="PASS" signature="beforetest()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="beforetest" is-config="true" duration-ms="3" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforetest -->
+        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="beforemethod" is-config="true" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforemethod -->
+        <test-method status="PASS" signature="test1()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="test1" duration-ms="16" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test1 -->
+        <test-method status="PASS" signature="beforeclass()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="beforeclass" is-config="true" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method status="PASS" signature="aftermethod()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="aftermethod" is-config="true" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftermethod -->
+        <test-method status="PASS" signature="beforemethod()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="beforemethod" is-config="true" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforemethod -->
+        <test-method status="PASS" signature="test2()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="test2" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test2 -->
+        <test-method status="PASS" signature="afterclass()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="afterclass" is-config="true" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterclass -->
+        <test-method status="PASS" signature="aftertest()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="aftertest" is-config="true" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftertest -->
+        <test-method status="PASS" signature="aftermethod()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="aftermethod" is-config="true" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftermethod -->
+        <test-method status="PASS" signature="aftersuit()[pri:0, instance:com.qa.testcase.Testng_Annotatios@589838eb]" name="aftersuit" is-config="true" duration-ms="0" started-at="2018-11-28T08:59:33Z" finished-at="2018-11-28T08:59:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- aftersuit -->
+      </class> <!-- com.qa.testcase.Testng_Annotatios -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
