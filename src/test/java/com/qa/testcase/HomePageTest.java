@@ -2,6 +2,8 @@ package com.qa.testcase;
 
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
@@ -23,6 +25,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import com.google.common.graph.SuccessorsFunction;
 import com.qa.base.Testbase;
 import com.qa.pages.Address_Form;
 import com.qa.pages.CheckOut;
@@ -61,67 +64,128 @@ public class HomePageTest extends Testbase {
 		
 	}
 
-	/*
-	 * @Test
-	 * 
-	 * public void VerifyHomePageTilte() {
-	 * 
-	 * // Assert.assertEquals("Automation Practice //
-	 * Site","homepaget.Homepagetitle()" ); homepaget.clickOnHomePage();
-	 * 
-	 * String Tilte = homepaget.Homepagetitle(); log.info(
-	 * "Home page title is--->" + Tilte); Assert.assertEquals(Tilte,
-	 * "Automation Practice Site");
-	 * 
-	 * // System.out.println("Verify HomePage Tilte"+ //
-	 * homepaget.Homepagetitle()) }
-	 * 
-	 * @Test public void VerifySliderCount() {
-	 * 
-	 * homepaget.clickOnHomePage();
-	 * 
-	 * int count = homepaget.slidercount(); // System.out.print( "Page count" +
-	 * homepaget.Slidercount());
-	 * 
-	 * if (count == 3) { System.out.println("Yes count is correct");
-	 * 
-	 * }else{
-	 * 
-	 * System.out.println("No count is Incorrect"); } }
-	 * 
-	 * @Test public void VerifyNewArrivala(){
-	 * 
-	 * homepaget.clickOnHomePage(); try{ int NewArrival =
-	 * homepaget.newarrival();
-	 * 
-	 * if(NewArrival==3){ flag = true; } }catch (Exception e){ }
-	 * Assert.assertTrue("Condtion Not Match", flag); }
-	 * 
-	 * @Test(dependsOnMethods ="VerifyNewArrivala" ) public void
-	 * verifyNavigateToProductPage(){
-	 * 
-	 * homepaget.clickOnHomePage(); homepaget.verifyAddBasketFromNewArrivals();
-	 * String ProductTitle = driver.getTitle();
-	 * System.out.println(ProductTitle); }
-	 */
+	@Test
+	public void testing() throws InterruptedException {
 
-	/*
-	 * @Test public void verifyDescriptionFeild() throws InterruptedException{
-	 * homepaget.clickOnHomePage(); homepaget.verifyAddBasketFromNewArrivals();
-	 * if(homepaget.descriptiondisable()){
-	 * 
-	 * //homepaget.reviewclick(); homepaget.descriptionclick(); String
-	 * ProductDescription = homepaget.productDescription(); System.out.println(
-	 * "Print the Prodcut Description"+ ProductDescription);
-	 * Assert.assertEquals(ProductDescription,
-	 * "The Selenium WebDriver Recipes book is a quick problem-solving guide to automated testing web applications with Selenium WebDriver. It contains hundreds of solutions to real-world problems, with clear explanations and ready-to-run test scripts you can use in your own projects."
-	 * ); } else{ System.out.println("Description Link Not Clickable");
-	 * }System.err.println("");
-	 * 
-	 * }
-	 * 
-	 * 
-	 * @Test public void verifyProductReview(){ homepaget.clickOnHomePage();
+		
+	    Assert.assertTrue(homepaget.verifyUI());
+	}
+	
+	
+	
+	/*@Test
+	public void testing1() throws InterruptedException {
+
+		List<WebElement> ElementsList = driver.findElements(By.tagName("body"));
+		
+
+		String[] tempList = ElementsList.get(0).getText().split("\n");
+
+	
+
+		List<String> expectedResult = new ArrayList<String>();
+
+		expectedResult.add("Shop");
+		expectedResult.add("My Account");
+		expectedResult.add("Test Cases");
+		expectedResult.add("AT Site");
+		expectedResult.add("Demo Site");
+		expectedResult.add("0 Items?0.00");
+		expectedResult.add("Login");
+		expectedResult.add("Username or email address *");
+		expectedResult.add("Password *");
+		expectedResult.add("Remember me");
+		expectedResult.add("Lost your password?");
+		expectedResult.add("Register");
+
+		expectedResult.add("Email address *");
+		expectedResult.add("Password *");
+		expectedResult.add("SUBSCRIBE HERE");
+		expectedResult.add("© Automation Practice Site 2018uu");
+
+		for (int k = 0; k < expectedResult.size(); k++) {
+			Boolean flag = false;
+			for (int i = 0; i < tempList.length; i++) {
+
+			if (tempList[i].equalsIgnoreCase(expectedResult.get(k))) {
+					System.out.println(tempList[i]);
+					System.out.println(expectedResult.get(k));
+					Assert.assertEquals(tempList[i], expectedResult.get(k));
+					flag = true;
+					break;
+
+			}
+				
+				
+
+			}
+			if(!flag)
+			System.out.println("Not Found "+expectedResult.get(k));
+
+		}
+
+	}*/
+	 /* @Test
+	  
+	  public void VerifyHomePageTilte() {
+	  
+	  // Assert.assertEquals("Automation Practice //
+	  Site","homepaget.Homepagetitle()" ); homepaget.clickOnHomePage();
+	  
+	  String Tilte = homepaget.Homepagetitle(); log.info(
+	  "Home page title is--->" + Tilte); Assert.assertEquals(Tilte,
+	 "Automation Practice Site");
+	  
+	  // System.out.println("Verify HomePage Tilte"+ //
+	 homepaget.Homepagetitle()) }
+	  
+	  @Test public void VerifySliderCount() {
+	
+	  homepaget.clickOnHomePage();
+	  
+	  int count = homepaget.slidercount(); // System.out.print( "Page count" +
+	 homepaget.Slidercount());
+	  
+	 if (count == 3) { System.out.println("Yes count is correct");
+	  
+	 }else{
+	  
+	  System.out.println("No count is Incorrect"); } }
+	
+	  @Test public void VerifyNewArrivala(){
+	  
+	  homepaget.clickOnHomePage(); try{ int NewArrival =
+	  homepaget.newarrival();
+	  
+	  if(NewArrival==3){ flag = true; } }catch (Exception e){ }
+	  Assert.assertTrue("Condtion Not Match", flag); }
+	 
+	  @Test(dependsOnMethods ="VerifyNewArrivala" ) public void
+	  verifyNavigateToProductPage(){
+	  
+	  homepaget.clickOnHomePage(); homepaget.verifyAddBasketFromNewArrivals();
+	 String ProductTitle = driver.getTitle();
+	  System.out.println(ProductTitle); }
+	 
+
+	
+	 @Test public void verifyDescriptionFeild() throws InterruptedException{
+	 homepaget.clickOnHomePage(); homepaget.verifyAddBasketFromNewArrivals();
+	  if(homepaget.descriptiondisable()){
+	  
+	  homepaget.reviewclick(); homepaget.descriptionclick();
+	
+	  String ProductDescription = homepaget.productDescription(); 
+	 System.out.println( "Print the Prodcut Description"+ ProductDescription);
+	  Assert.assertEquals(ProductDescription,
+	  "The Selenium WebDriver Recipes book is a quick problem-solving guide to automated testing web applications with Selenium WebDriver. It contains hundreds of solutions to real-world problems, with clear explanations and ready-to-run test scripts you can use in your own projects."
+	  ); } else{ System.out.println("Description Link Not Clickable");
+	  }System.err.println("");
+	  
+	  }
+	  
+	  
+	  @Test public void verifyProductReview(){ homepaget.clickOnHomePage();
 	 * homepaget.verifyAddBasketFromNewArrivals();
 	 * if(homepaget.reviewoptiondisable()){
 	 * 
@@ -188,115 +252,8 @@ public class HomePageTest extends Testbase {
 		//assert ! homepaget.Testing.isDisplayed();
 	//}//
 	
-	@Test
-	public void testing() throws InterruptedException{
-		
-		List<WebElement>ElementsList =driver.findElements(By.xpath("//*"));
-		List<String> actualResult = new ArrayList<String>();
-		
-		for(int i=0;i<ElementsList.size();i++){
-	        System.out.println(ElementsList.get(i).getText());
-	        actualResult.add(ElementsList.get(i).getText());
-	    }
-				// List<WebElement>driver.findElements(By.xpath("//*"));
-		//driver.getPageSource();
-		//System.out.println(Integer.toString(ElementsList.size()));
-		/*String []linkText =new String[ElementsList.size()];
-		
-		System.out.println(Arrays.toString(linkText));
-		for(WebElement element : ElementsList) {
-		   
-		 System.out.println(  element.getText());
-				  
-		 
-		 
-		}       */    
-		
-	
-	     
-		 List<String> expectedResult = new ArrayList<String>();
-		// List<String> expectedresultt = new ArrayList<String>();
-		  
-		 
-		 expectedResult.toString();
-		 //expectedResult .replace(",", "");
-		  
-		  expectedResult.add("Shop");                  
-		  expectedResult.add("My Account");
-		  expectedResult.add("Test Cases");
-		  expectedResult.add("AT Site");
-		  expectedResult.add("Demo Site");
-		  expectedResult.add("0 Items?0.00");
-		  expectedResult.add("Login");
-		  expectedResult.add("Username or email address *");
-		  expectedResult.add("Password *");
-		  expectedResult.add("Remember me");
-		  expectedResult.add("Lost your password?");
-		  expectedResult.add("Register");
-		  
-		  expectedResult.add("Email address *");
-		  expectedResult.add("Password *");
-		  expectedResult.add("SUBSCRIBE HERE");
-		  expectedResult.add("© Automation Practice Site 2018");
-		  
-		/*  for (int i =0;i<expectedResult.size();i++){
-				 expectedresultt.add(expectedResult.get(i));
-				 System.out.println("--------------------:"+expectedresultt);
-				 
-		  Assert.assertEquals(actualResult,expectedresultt);
-		  
-		 
-		  
-		  
-		 }	*/
-		  
-		  System.out.println(expectedResult.size());
-		  System.out.println(actualResult.size());
-		  expectedResult.toString().replaceAll(",", "");
-		 if (actualResult.size()== expectedResult.size()){
-			 
-			System.out.println("Matched");
-		 }else{
-			 
-			 System.out.println("Failed");
-		 }
-		  
-		
-		  
-		  if (actualResult.size()==expectedResult.size()){
-			  
-			  for (int i =0;i<expectedResult.size();i++){
-				  
-				  if (expectedResult.get(i).equals(actualResult.get(i))){
-					  
-					  System.out.println("Matched");
-					  
-				  }else{
-					  
-					  System.out.println("Not Matched");
-				  }
-			  }
-		  }
-		
-	}
-	
-	
- // System.out.println(actualResult.containsAll(expectedResult));
-		//  assertThat(actualResult).isEqualTo(expectedResult);
-		//  System.out.println(expectedResult);
-	
-		// assertThat(actualResult).containsAll(expectedresult);
-		  
-		
-		//  
-/*a*/
 
-		  
-		  
-	
- 
-		
-
+	  
 	/*@Test
 	public void Add_To_Basket_Coupan() throws InterruptedException{
 		
@@ -442,6 +399,8 @@ public class HomePageTest extends Testbase {
        }
 	*/
 	
+	
+
 	@AfterMethod
 	public void quit() {
 

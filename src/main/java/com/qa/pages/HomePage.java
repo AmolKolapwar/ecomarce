@@ -1,7 +1,11 @@
 package com.qa.pages;
 
+import static org.testng.Assert.assertTrue;
+
+import java.util.ArrayList;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -10,6 +14,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.qa.base.Testbase;
 import com.qa.utill.WaitTool;
+
+import junit.framework.Assert;
 
 public class HomePage extends Testbase   {
 	
@@ -187,6 +193,67 @@ public ProductPage  selectfromnewarrivals(){
 public void selectBook(){
 	Book_Belwo_450.click();
 }
+
+
+
+public boolean verifyUI(){
+
+	boolean flag2 = false;
+	List<WebElement> ElementsList = driver.findElements(By.tagName("body"));
+	
+
+	String[] tempList = ElementsList.get(0).getText().split("\n");
+
+
+
+	List<String> expectedResult = new ArrayList<String>();
+
+	expectedResult.add("Shop");
+	expectedResult.add("My Account");
+	expectedResult.add("Test Cases");
+	expectedResult.add("AT Site");
+	expectedResult.add("Demo Site");
+	expectedResult.add("0 Items?0.00");
+	expectedResult.add("Login");
+	expectedResult.add("Username or email address *");
+	expectedResult.add("Password *");
+	expectedResult.add("Remember me");
+	expectedResult.add("Lost your password?");
+	expectedResult.add("Register");
+
+	expectedResult.add("Email address *");
+	expectedResult.add("Password *");
+	expectedResult.add("SUBSCRIBE HERE");
+	expectedResult.add("© Automation Practice Site 2018");
+
+	for (int k = 0; k < expectedResult.size(); k++) {
+		Boolean flag = false;
+		for (int i = 0; i < tempList.length; i++) {
+
+		if (tempList[i].equalsIgnoreCase(expectedResult.get(k))) {
+				System.out.println(tempList[i]);
+				System.out.println(expectedResult.get(k));
+				Assert.assertEquals(tempList[i], expectedResult.get(k));
+				flag = true;
+				break;
+
+		}
+			
+			
+
+		}
+		if(!flag){
+			System.out.println("Not Found "+expectedResult.get(k));
+		}
+		flag2=flag;
+		
+		
+
+	}
+return flag2;
+}
+
+
 
 public CheckOut proceedchekout(){
 	if(Proceed_Checkout.isEnabled()){
